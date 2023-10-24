@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div style="background-color: #161b23;height:43rem;display:flex;justify-content: center;align-items: center;"">
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction == 0 %}
+            <h1 style="color:#fff;text-align: center;">Written by AI</h1>
+            <img style="height: 400px;border-radius:15%;" src="{{url_for('static', filename='no.jpeg')}}"/> 
+                
+            {% endif %}
+        </div>
+    </div>
+        
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction == 1 %}
+            <h1 style="color:#fff; text-align: center;">Written by Human</h1>
+                <img style="height: 400px;border-radius:5%;" src="{{url_for('static', filename='yes.jpeg')}}"/>
+                
+            {% endif %}
+        </div>
+</div>
+</div>
+{% endblock %}
